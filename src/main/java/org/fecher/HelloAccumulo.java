@@ -22,6 +22,7 @@ import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.Parser;
 import org.apache.hadoop.io.Text;
 import org.apache.log4j.Logger;
+import org.apache.log4j.BasicConfigurator;
 
 public class HelloAccumulo
 {
@@ -32,7 +33,7 @@ public class HelloAccumulo
 
 	public static void main(
 			final String[] args ) {
-
+BasicConfigurator.configure();
 		final Options accumuloOptions = new Options();
 		AccumuloCommandLineOptions.applyOptions(accumuloOptions);
 		if (args.length < 1) {
